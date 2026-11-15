@@ -1,0 +1,21 @@
+{
+  "Rules": [
+    {
+      "ID": "hibernar_dados_silver",
+      "Status": "Enabled",
+      "Filter": {
+        "ObjectSizeGreaterThan": 131072
+      },
+      "Transitions": [
+        {
+          "Days": 365,
+          "StorageClass": "STANDARD_IA"
+        },
+        {
+          "Days": 730,
+          "StorageClass": "DEEP_ARCHIVE"
+        }
+      ]
+    }
+  ]
+}

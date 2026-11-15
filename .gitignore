@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.env
+*.pem
+*.key
+.aws/
+data/raw/*.csv
+data/raw/*.json
+data/processed/*.parquet
+*.snappy.parquet
+.DS_Store
+Thumbs.db
