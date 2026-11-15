@@ -22,6 +22,8 @@ Em uma operação de streaming, dados de sessão e catálogo chegam em formatos 
 
 ![Fluxo Visual do ETL no AWS Glue Studio](docs/assets/05_glue_studio_etl_flow.png)
 
+> 📄 **Código-fonte do job PySpark:** [`src/job_streaming_curation.py`](src/job_streaming_curation.py)
+
 ---
 
 ## Decisões de Engenharia e FinOps
@@ -53,3 +55,4 @@ Em uma operação de streaming, dados de sessão e catálogo chegam em formatos 
 2. **Configurar a Role IAM:** Crie a função `AWSGlueS3` com relação de confiança para `glue.amazonaws.com` e anexe as políticas `AWSGlueServiceRole` e `AmazonS3FullAccess`.
 3. **Catalogar a camada Bronze:** No AWS Glue, crie o banco `db_streaming_catalog` e execute o crawler `streaming-crawler` apontando para o bucket `streaming-s3-bronze`.
 4. **Implantar o Job ETL e o Workflow:** Importe o script `src/job_streaming_curation.py` no AWS Glue Studio (10 workers, *Job Bookmark* habilitado) e encadeie a execução do crawler e do job no workflow `wf_streaming_pipeline`.
+
